@@ -1,31 +1,58 @@
-public class Calculator {
+import java.util.ArrayList;
+import java.util.List;
 
-    public void operation(int number1, int number2){
-        addNumbers(number1, number2);
-        substractNumbers(number1, number2);
-        multiplyNumbers(number1, number2);
-        divideNumbers(number1, number2);
-}
+public class Calculator {
+    private String lastOperation;
+    private static int operationCount = 0;
+    List<String> lastOperations = new ArrayList<>();
+
+    //public void calculate(int number1, int number2){
+        //addNumbers(number1, number2);
+        //subtractNumbers(number1, number2);
+        //multiplyNumbers(number1, number2);
+        //divideNumbers(number1, number2);
+        //}
 
     public int addNumbers(int number1, int number2){
         int sum = number1+number2;
+        operationCount = operationCount + 1;
+        lastOperation = "addition of "+ number1 + " and " + number2;
+        lastOperations.add(lastOperation);
         return sum;
     }
-    public int substractNumbers(int number1, int number2){
-        int substract = number1-number2;
-        return substract;
+
+    public int subtractNumbers(int number1, int number2){
+        int subtract = number1-number2;
+        operationCount = operationCount + 1;
+        lastOperation = "subtraction of "+ number1 + " and " + number2;
+        lastOperations.add(lastOperation);
+        return subtract;
     }
     public int multiplyNumbers(int number1, int number2){
         int multiply = number1*number2;
+        operationCount = operationCount + 1;
+        lastOperation = "multiplication of "+ number1 + " and " + number2;
+        lastOperations.add(lastOperation);
         return multiply;
     }
     public double divideNumbers(int number1, int number2){
+        lastOperation = "division of "+ number1 + " and " + number2;
+        operationCount = operationCount + 1;
         if (number2 == 0){
             System.out.println("number2 is Zero" +" "+ "So, result expected is infinity");
-        }else {
-        double divide = Math.floor((double)number1/number2);
+            return 0;
+        } else  {
+            double divide = Math.floor((double)number1/number2);
+            lastOperations.add(lastOperation);
             return divide;
+        }
     }
-        return 0;
+
+    public String getLastOperation() {
+        return lastOperation;
+    }
+
+    public int getOperationCount() {
+        return operationCount;
     }
 }
