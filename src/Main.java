@@ -3,10 +3,18 @@ public class Main {
         Calculator calculator = new Calculator();
         UserInput userinput = new UserInput();
 
-        userinput.userInput();
 
-        int Add = calculator.addNumbers(1,2);
-        System.out.println(Add);
+        int operation = userinput.getOperationFromUser();
+
+
+        int first = userinput.getOperandFromUser("Enter first Number");
+        int second = userinput.getOperandFromUser("Enter second Number");
+
+        if(operation == 1) {
+            int add = calculator.addNumbers(first, second);
+            System.out.println("Addition of " + first + " and " + second + " is " + add);
+        }
+
         int Subtract = calculator.subtractNumbers(1,2);
         System.out.println(Subtract);
         int Multiply = calculator.multiplyNumbers(2,2);

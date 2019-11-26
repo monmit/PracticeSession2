@@ -6,13 +6,6 @@ public class Calculator {
     private static int operationCount = 0;
     List<String> lastOperations = new ArrayList<>();
 
-    //public void calculate(int number1, int number2){
-        //addNumbers(number1, number2);
-        //subtractNumbers(number1, number2);
-        //multiplyNumbers(number1, number2);
-        //divideNumbers(number1, number2);
-        //}
-
     public int addNumbers(int number1, int number2){
         int sum = number1+number2;
         operationCount = operationCount + 1;
