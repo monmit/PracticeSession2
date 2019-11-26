@@ -22,15 +22,16 @@ public class UserInput {
         //myList.add(3);
         //myList.add(4);
 
-        while (below methods are true) {
-            // if (userinput is found in options),throw error and ask again to userinput; we can use while loop here on list)
-            //when conditions meet, Validate the user input.
+        while (isFound(true) && (numberOrNot(true)){
+            // if (userinput is found in options),we can use while loop here on list
+            //when conditions meet, Validate the user input. (How??)
+            System.out.println("Good To Go !");
+            return true;
         }
-            if (!numberOrNot(true)) {
-            }
+
         }
         public boolean isFound(option){
-        // Check if option is not from the list i.e.1,2,3,4)
+        // Check if option is not from the list i.e.1,2,3,4)else throw error and ask again to userinput
         System.out.println("Please choose from the given options");
         return true;
         }
