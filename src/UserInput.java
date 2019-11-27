@@ -7,27 +7,24 @@ public class UserInput {
     public int getOperationFromUser(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("*********Welcome to calculator*************");
-        System.out.println("1. Addition"+"2. Subtraction"+"3.Multiplication"+"4.Division");
+        System.out.println(" Operation List: 1. Addition"+"2. Subtraction"+"3.Multiplication"+"4.Division");
         System.out.println("Please choose which you wish to use");
-        System.out.println("Enter 1, 2, 3 or 4 (0 for exit): ");
+        System.out.println("Enter 1, 2, 3 or 4 (0 for exit, 5 for exit/continue): ");
         String input = scanner.next();
 
-        // i want to make a list or Array??? of choices = {1,2,3,4}
         List<Integer> myList = new ArrayList<>();
         myList.add(0);
         myList.add(1);
         myList.add(2);
         myList.add(3);
         myList.add(4);
+        myList.add(5);
 
         while (!isInputCorrect(input, myList)) {
-            // if (userinput is found in options),we can use while loop here on list
-            //when conditions meet, Validate the user input. (How??)
             System.out.println("Wrong input, please enter your choice again");
             input = scanner.next();
         }
-
-        System.out.println("Good to go!");
+        //System.out.println("Ok ! We are ready to take your inputs!");
         return Integer.parseInt(input);
     }
 
